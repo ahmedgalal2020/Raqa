@@ -23,3 +23,6 @@ html,body{max-inline-size:100%;overflow-x:clip}
 .social-icon{cursor:pointer;background:transparent;transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s}
 .social-icon:hover,.social-icon:focus-visible{background:var(--pale);color:var(--ink);border-color:var(--pink);box-shadow:0 4px 12px #4c3d3d14;transform:translateY(-3px);opacity:1}
 .social-icon:active{background:var(--pink);transform:translateY(0) scale(.94)}
+
+/* Keep the left side of the landscape film visible in the mobile crop. */
+@media(max-width:760px){.hero-video{object-position:left center}}
