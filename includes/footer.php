@@ -1,0 +1,3 @@
+</main><footer class="site-footer"><div class="footer-top"><a class="footer-brand" href="index.php"><img src="assets/images/branding/raqa-logo.png" width="1765" height="2000" alt="رِقّة RAQA"></a><div><p class="footer-slogan">رِقّة في التفاصيل، دفء في الضيافة</p><p>تبوك، المملكة العربية السعودية</p></div><nav aria-label="روابط أسفل الصفحة"><?php foreach($navigation as $url=>$label): ?><a href="<?= e($url) ?>"><?= e($label) ?></a><?php endforeach; ?></nav></div><div class="footer-bottom"><small>© <?= date('Y') ?> رِقّة | RAQA. جميع الحقوق محفوظة.</small><?php require __DIR__.'/social-links.php'; ?><span class="english">WITH A TOUCH OF RAQA</span></div></footer>
+<?php require __DIR__.'/whatsapp-button.php'; ?>
+</body></html>

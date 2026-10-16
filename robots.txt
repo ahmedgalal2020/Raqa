@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /data/
+Disallow: /scripts/
+# Add Sitemap: https://YOUR-VERIFIED-DOMAIN/sitemap.xml after configuration.
