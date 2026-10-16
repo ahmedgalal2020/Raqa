@@ -16,3 +16,10 @@
 
 /* A one-em box prevents the rotated heart's inherited 1.85 line-height from protruding. */
 .intro-decoration{width:1em;height:1em;line-height:1;display:block}
+/* Contain horizontal visual overflow without changing vertical scrolling or RTL. */
+html,body{max-inline-size:100%;overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+/* Unconfigured accounts stay local buttons, with the same feedback as linked accounts. */
+.social-icon{cursor:pointer;background:transparent;transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s}
+.social-icon:hover,.social-icon:focus-visible{background:var(--pale);color:var(--ink);border-color:var(--pink);box-shadow:0 4px 12px #4c3d3d14;transform:translateY(-3px);opacity:1}
+.social-icon:active{background:var(--pink);transform:translateY(0) scale(.94)}

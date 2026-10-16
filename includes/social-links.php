@@ -10,8 +10,8 @@ $socials = [
 <div class="social-links" aria-label="حسابات رِقّة">
 <?php foreach ($socials as $label => [$url, $path]): ?>
 <?php if (social_url($url)): ?><a class="social-icon" href="<?= e($url) ?>" target="_blank" rel="noopener noreferrer" aria-label="<?= e($label) ?>" title="<?= e($label) ?>">
-<?php else: ?><span class="social-icon social-unavailable" role="img" aria-label="<?= e($label) ?> — رابط الحساب غير متاح حاليًا" title="<?= e($label) ?> — رابط الحساب غير متاح حاليًا">
+<?php else: ?><button type="button" class="social-icon social-unavailable" aria-label="<?= e($label) ?> — رابط الحساب غير متاح حاليًا" title="<?= e($label) ?> — رابط الحساب غير متاح حاليًا">
 <?php endif; ?><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><?= $path ?></svg>
-<?php if (social_url($url)): ?></a><?php else: ?></span><?php endif; ?>
+<?php if (social_url($url)): ?></a><?php else: ?></button><?php endif; ?>
 <?php endforeach; ?>
 </div>

@@ -42,3 +42,10 @@ The narrow-screen check found and fixed overflow from the decorative heart. The 
 
 ## Hero video update
 The supplied 10-second 1920×1080 MP4 was copied into the configured hero path. Chrome successfully decoded and autoplayed it muted. The pause button paused playback; switching to reduced motion removed the source. The loop attribute is enabled. Full-film and physical-device playback remain untested.
+
+## Horizontal scrolling and social feedback follow-up
+- The reported scrolling was not reproduced in the local baseline, including fallback-font checks; no new root-cause claim is made.
+- Added root-level horizontal overflow containment (clip, with hidden fallback), retaining vertical scrolling and the existing RTL layout.
+- CSS and JavaScript URLs now use file modification versions so updated assets do not remain behind a stale browser cache.
+- Unconfigured social accounts are local type=button controls with pointer cursor, hover/focus and pressed feedback, and no navigation.
+- All 80 viewport/page checks passed again, including an attempted negative RTL horizontal scroll. Pointer styling, hover background changes, click/Enter no-navigation behavior and PHP syntax checks passed.
