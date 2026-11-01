@@ -1,6 +1,6 @@
 # رِقّة | RAQA
 
-Arabic RTL hospitality website for Tabuk, built with PHP 8.2+, semantic HTML, CSS and vanilla JavaScript. No database, framework, build step, paid API, or server-side inquiry storage.
+Arabic RTL hospitality website for Tabuk, tested with PHP 8.5.12, semantic HTML, CSS and vanilla JavaScript. No database, framework, build step, paid API, or server-side inquiry storage.
 
 ## Start locally
 
@@ -19,7 +19,7 @@ Edit `config.php`:
 
 See [docs/HOSTINGER.md](docs/HOSTINGER.md) for GitHub connection, PHP settings, automatic deployment, and manual fallback steps. Deployment is deferred at the owner's request until the domain and hosting plan are supplied. `python scripts/package-release.py` creates a deployment-only ZIP in `dist/`.
 
-Select PHP 8.2 or higher. Upload the five root page files, `config.php`, `includes/`, `data/`, `assets/`, `.htaccess`, `.user.ini`, `robots.txt`, and the generated `sitemap.xml` into your site's public directory (usually `public_html`). Do not upload `.git`, `.tools`, `tests`, or `scripts`. Use HTTPS. PHP includes use relative directory-safe paths; public links support a subdirectory installation. Apache overrides provide basic response headers, directory-listing protection, and asset caching. `.user.ini` disables browser-facing PHP errors on compatible CGI/FPM hosts; confirm this setting in your hosting panel. Keep server error logs outside the public directory.
+Select PHP 8.5.12 or a newer stable security release (see docs/HOSTINGER.md). Upload the five root page files, `config.php`, `includes/`, `data/`, `assets/`, `.htaccess`, `.user.ini`, `robots.txt`, and the generated `sitemap.xml` into your site's public directory (usually `public_html`). Do not upload `.git`, `.tools`, `tests`, or `scripts`. Use HTTPS. PHP includes use relative directory-safe paths; public links support a subdirectory installation. Apache overrides provide basic response headers, directory-listing protection, and asset caching. `.user.ini` disables browser-facing PHP errors on compatible CGI/FPM hosts; confirm this setting in your hosting panel. Keep server error logs outside the public directory.
 
 ## Content and images
 
