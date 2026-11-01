@@ -3,7 +3,7 @@
 ## Project settings
 
 - Application: custom PHP website (not Node.js, WordPress, or Website Builder).
-- PHP: 8.2 or newer, recommended 8.4.
+- PHP: 8.5.12 or newer stable release; Windows development package: 8.5.12-1.
 - Repository: [`ahmedgalal2020/Raqa`](https://github.com/ahmedgalal2020/Raqa), visibility **Public**, explicitly approved by the owner.
 - Deployment branch: `main`.
 - Repository project root: `/` (the folder containing `index.php`).
@@ -19,7 +19,7 @@
 3. Authorize the Hostinger GitHub integration for **only `Raqa`** when GitHub offers repository selection. Use the repository visibility approved by the owner.
 4. Select `Raqa`, branch `main`, and the appropriate destination directory, normally `public_html`. Deploy and wait for the completed status.
 5. In the Git overview, enable **Auto-deployment**. Future pushes to `main` will deploy. Use **All deployments** to verify the commit ID and outcome. **Redeploy** triggers a manual update.
-6. Enable HTTPS in the domain's hosting settings, select PHP 8.2+, visit all five pages, check video and gallery behavior, and click a WhatsApp link to confirm the official number. Check that `/.git/config`, `/tests/`, `/scripts/`, and `/config.php` return forbidden/not-found responses rather than file contents.
+6. Enable HTTPS in the domain's hosting settings, select PHP 8.5 with patch version 8.5.12 or newer, visit all five pages, check video and gallery behavior, and click a WhatsApp link to confirm the official number. Check that `/.git/config`, `/tests/`, `/scripts/`, and `/config.php` return forbidden/not-found responses rather than file contents.
 
 No build workflow, GitHub token, SSH password, or webhook secret is required in this source tree for Hostinger's OAuth integration. The `.htaccess` excludes development/source directories from web access while PHP can still include its components. Confirm Apache/LiteSpeed overrides are active on your hosting plan.
 
@@ -37,3 +37,15 @@ The owner explicitly deferred deployment until the domain and hosting plan are s
 Official current guide: https://www.hostinger.com/support/1583302-how-to-deploy-a-git-repository-in-hostinger/
 
 Current OAuth guide: https://www.hostinger.com/changelog/github-oauth-setup-for-git-deployments
+
+## PHP security update — 1 November 2026
+
+PHP 8.5.12 is the current stable release. It fixes CVE-2026-109618 and CVE-2026-109619. Windows package 8.5.12-1 additionally updates Brotli to 1.2.1. The runtime still reports 8.5.12; the -1 suffix identifies the package rebuild.
+
+Changing this repository does not upgrade Hostinger's PHP runtime. Select PHP 8.5 in the hosting PHP configuration and verify the actual patch is at least 8.5.12 with the provider. If 8.5 is unavailable, request it; 8.4.27 contains the critical October fixes as a temporary fallback. Restart all PHP workers after updating and check all five pages. Do not leave a public phpinfo page online.
+
+Follow PHP's 23 October advisory: set `session.upload_progress.enabled=0` in the server php.ini or FPM pool before request parsing, then restart all workers. Do not rely on application ini_set() or FPM .user.ini for this mitigation. This website does not need session upload progress. An updated runtime remains essential.
+
+Official sources: https://www.php.net/index.php and https://www.php.net/downloads.php
+
+No previous site compromise or remediation is documented in the repository history reviewed for this update. A runtime upgrade does not establish that an already compromised server has been cleaned.
