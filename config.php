@@ -4,10 +4,10 @@ declare(strict_types=1);
 define('RAQA_WHATSAPP', '966507413106');
 define('RAQA_PHONE', '+966507413106');
 define('RAQA_INSTAGRAM', '');
-define('RAQA_TIKTOK', '');
+define('RAQA_TIKTOK', 'https://www.tiktok.com/@raqa.catering');
 define('RAQA_FACEBOOK', '');
-define('RAQA_SNAPCHAT', '');
-define('RAQA_X', '');
+define('RAQA_SNAPCHAT', 'https://www.snapchat.com/@raqa.catering');
+define('RAQA_X', 'https://x.com/raqacatering');
 define('RAQA_SITE_URL', ''); // HTTPS origin, including subdirectory if applicable.
 define('RAQA_HERO_DESKTOP', 'assets/videos/hero-desktop.mp4');
 define('RAQA_HERO_MOBILE', 'assets/videos/hero-mobile.mp4');
